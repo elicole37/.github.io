@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #box {
+        width: 130px;
+        height: 130px;
+        background-color: red;
+        position:absolute;
+        top: 50px;
+        left: 50px;
+        }
+
+        </style>
+</head>
+
+<body>
+  
+<div id="box"></div>
+
+</body>
+</html>
+<script>
+var x = 100
+var y = 100
+var up = -40
+var right = -40
+document.getElementById("box").addEventListener("click", moveBox)
+function moveBox(){
+    document.getElementById("box").style.top = y +"px"
+    document.getElementById("box").style.left = x +"px"
+   x = x + up
+   y= y + right
+    if( x <=-20){
+    up = 40
+}else if( x >= 1180){
+    up = -40
+}
+   if(y >= 550){
+    right = -40
+}else if(y <= -40){
+    right = 40
+}
+}
+setInterval(moveBox, 55)
+    
+
+
+
+</script>
